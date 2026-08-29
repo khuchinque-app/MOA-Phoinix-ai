@@ -19,7 +19,10 @@
     },
     "opentabs": {
       "type": "http",
-      "url": "http://127.0.0.1:9515/mcp"
+      "url": "http://127.0.0.1:9515/mcp",
+      "headers": {
+        "Authorization": "Bearer 45dda27ea2e00b7231874ff5eb8b6f10764f894a7cbdb1d88dddf0459433f6f0"
+      }
     }
   }
 }
