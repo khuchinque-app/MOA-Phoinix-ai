@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Gemini",
+    "url": "https://gemini.google.com/app/60cce3de35189efd",
+    "timestamp": "2026-08-29 17:37:28",
+    "status": "connected",
+    "screenshot": "ai_autographs/gemini_page.png",
+    "response": "See screenshot: ai_autographs/gemini_response.png",
+    "error": null
+  },
+  {
+    "name": "Claude",
+    "url": "https://claude.ai/new",
+    "timestamp": "2026-08-29 17:37:55",
+    "status": "error",
+    "screenshot": null,
+    "response": null,
+    "error": "Timeout 15000ms exceeded.\n=========================== logs ===========================\n\"commit\" event fired\n\"domcontentloaded\" event fired\n\"load\" event fired\n============================================================"
+  },
+  {
+    "name": "Kimi",
+    "url": "https://kimi.moonshot.cn/",
+    "timestamp": "2026-08-29 17:38:14",
+    "status": "connected",
+    "screenshot": "ai_autographs/kimi_page.png",
+    "response": "See screenshot: ai_autographs/kimi_response.png",
+    "error": null
+  },
+  {
+    "name": "DeepSeek",
+    "url": "https://chat.deepseek.com/",
+    "timestamp": "2026-08-29 17:38:47",
+    "status": "no_input",
+    "screenshot": "ai_autographs/deepseek_page.png",
+    "response": null,
+    "error": "Could not find input field"
+  },
+  {
+    "name": "Qwen",
+    "url": "https://tongyi.aliyun.com/qianwen/",
+    "timestamp": "2026-08-29 17:38:51",
+    "status": "error",
+    "screenshot": null,
+    "response": null,
+    "error": "Timeout 15000ms exceeded."
+  }
+]
