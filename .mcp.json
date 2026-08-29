@@ -12,9 +12,9 @@
       "command": "vision-mcp",
       "args": ["--stdio"],
       "env": {
-        "VISION_API_BASE_URL": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "VISION_API_KEY": "",
-        "VISION_MODEL": "qwen3.6-plus"
+        "VISION_API_BASE_URL": "https://api.kilo.ai/api/gateway",
+        "VISION_API_KEY": "none",
+        "VISION_MODEL": "nvidia/nemotron-3-nano-30b-a3b-reasoning:free"
       }
     },
     "opentabs": {
