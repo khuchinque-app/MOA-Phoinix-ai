@@ -1,0 +1,149 @@
+{
+  "description": "MoA Swarm Orchestration Configuration",
+  "version": "1.0.0",
+  "last_updated": "2026-08-29",
+  
+  "pool": {
+    "size": 5,
+    "min_agents": 2,
+    "max_agents": 20,
+    "auto_scale": true,
+    "scale_up_threshold": 0.8,
+    "scale_down_threshold": 0.2
+  },
+  
+  "task_management": {
+    "timeout_seconds": 60,
+    "retry_attempts": 3,
+    "retry_delay_ms": 1000,
+    "max_retries": 5,
+    "priority_levels": {
+      "high": 1,
+      "medium": 5,
+      "low": 10
+    }
+  },
+  
+  "health_check": {
+    "enabled": true,
+    "interval_seconds": 30,
+    "timeout_seconds": 10,
+    "failure_threshold": 3,
+    "recovery_threshold": 2
+  },
+  
+  "routing": {
+    "strategy": "auto",
+    "strategies": {
+      "direct": {
+        "description": "Single model call for simple tasks",
+        "use_when": "task_complexity == 'low'"
+      },
+      "parallel": {
+        "description": "Multiple models in parallel for diverse perspectives",
+        "use_when": "task_complexity == 'medium' OR task_requires_diversity"
+      },
+      "sequential": {
+        "description": "Step-by-step processing for complex workflows",
+        "use_when": "task_requires_dependencies"
+      },
+      "moa": {
+        "description": "Full MoA pipeline: proposers + aggregator",
+        "use_when": "task_complexity == 'high' OR task_requires_synthesis"
+      }
+    }
+  },
+  
+  "models": {
+    "proposers": [
+      {
+        "id": "proposer_1",
+        "model": "glm-4.7-flash",
+        "role": "general",
+        "weight": 1.0
+      },
+      {
+        "id": "proposer_2",
+        "model": "claude-3-opus",
+        "role": "analysis",
+        "weight": 1.2
+      },
+      {
+        "id": "proposer_3",
+        "model": "gpt-4",
+        "role": "reasoning",
+        "weight": 1.1
+      }
+    ],
+    "aggregator": {
+      "model": "claude-3-opus",
+      "max_tokens": 800,
+      "temperature": 0.3
+    }
+  },
+  
+  "browser": {
+    "enabled": true,
+    "type": "chromium",
+    "headless": true,
+    "max_sessions": 10,
+    "session_timeout_seconds": 300,
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    }
+  },
+  
+  "desktop": {
+    "enabled": false,
+    "platform": "auto",
+    "screenshot_dir": "screenshots"
+  },
+  
+  "search": {
+    "enabled": true,
+    "providers": ["duckduckgo", "google", "bing"],
+    "default_provider": "duckduckgo",
+    "max_results": 10,
+    "cache_ttl_seconds": 3600,
+    "cache_max_size": 1000
+  },
+  
+  "vision": {
+    "enabled": true,
+    "model": "glm-4.7-flash",
+    "max_image_size_mb": 10,
+    "supported_formats": ["png", "jpg", "jpeg", "gif", "webp"]
+  },
+  
+  "token_optimization": {
+    "enabled": true,
+    "use_ztk": true,
+    "compression_level": 5,
+    "track_usage": true,
+    "cost_alerts": {
+      "enabled": true,
+      "daily_limit_usd": 100.0,
+      "per_task_limit_usd": 10.0
+    }
+  },
+  
+  "monitoring": {
+    "enabled": true,
+    "metrics_port": 9090,
+    "tracing_enabled": true,
+    "tracing_endpoint": "http://localhost:14268/api/traces",
+    "log_level": "INFO"
+  },
+  
+  "security": {
+    "api_key_rotation": false,
+    "rotation_interval_hours": 24,
+    "request_signing": false,
+    "allowed_origins": ["*"],
+    "rate_limiting": {
+      "enabled": true,
+      "requests_per_minute": 60
+    }
+  }
+}

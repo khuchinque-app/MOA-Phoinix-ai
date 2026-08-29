@@ -1,0 +1,59 @@
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Docker
+docker/data/
+
+# Test files
+.test_*
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Generated files
+*.pyc
+*.pyo
+
+# Node
+node_modules/
+package-lock.json
+
+# Temp files
+tmp/
+temp/

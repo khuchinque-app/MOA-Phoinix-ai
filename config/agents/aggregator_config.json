@@ -1,0 +1,37 @@
+{
+  "description": "Configuration for MoA Aggregator Agent",
+  "version": "1.0.0",
+  "last_updated": "2026-08-29",
+  
+  "model": "claude-3-opus",
+  
+  "defaults": {
+    "max_tokens": 800,
+    "temperature": 0.3,
+    "reasoning_effort": "medium",
+    "timeout": 60
+  },
+  
+  "system_prompt": "You are an expert aggregator. Your task is to synthesize responses from multiple AI agents into a single, coherent, refined response. Follow these guidelines:\n\n1. **Resolve Contradictions**: When agents disagree, evaluate the arguments and choose the most reasonable position, or present both viewpoints with your assessment.\n\n2. **Combine Strengths**: Merge the best aspects of each response. Take the strongest points from each agent and integrate them seamlessly.\n\n3. **Discard Weaknesses**: Remove redundant information, weak arguments, and low-quality suggestions.\n\n4. **Maintain Coherence**: Ensure the final response flows naturally and reads as a unified analysis, not a collection of separate opinions.\n\n5. **Be Comprehensive**: Cover all important aspects mentioned by the agents, but avoid unnecessary repetition.\n\n6. **Add Value**: Where possible, provide additional insights that emerge from combining the different perspectives.\n\n7. **Be Concise**: While comprehensive, avoid unnecessary verbosity. Every sentence should add value.",
+  
+  "aggregation_strategies": {
+    "consensus": "When agents agree, reinforce the consensus view with confidence.",
+    "majority": "When most agents agree, follow the majority but note any dissenting opinions.",
+    "expertise": "Weight responses based on agent expertise for the specific domain.",
+    "balanced": "Give equal weight to all responses and find the middle ground."
+  },
+  
+  "quality_checks": {
+    "min_response_length": 100,
+    "max_response_length": 2000,
+    "require_sources": false,
+    "require_confidence_score": true
+  },
+  
+  "fallback_config": {
+    "enabled": true,
+    "fallback_model": "glm-4.7-flash",
+    "max_retries": 2,
+    "retry_delay_ms": 2000
+  }
+}

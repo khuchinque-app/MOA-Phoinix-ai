@@ -1,0 +1,63 @@
+{
+  "description": "Configuration for MoA Proposer Agents",
+  "version": "1.0.0",
+  "last_updated": "2026-08-29",
+  
+  "models": [
+    "glm-4.7-flash",
+    "claude-3-opus",
+    "gpt-4"
+  ],
+  
+  "default_model": "glm-4.7-flash",
+  
+  "defaults": {
+    "max_tokens": 400,
+    "temperature": 0.7,
+    "reasoning_effort": "none",
+    "timeout": 30
+  },
+  
+  "system_prompts": {
+    "security": "You are a security expert. Analyze the input from a security perspective, focusing on vulnerabilities, risks, and potential exploits. Provide actionable recommendations.",
+    "performance": "You are a performance optimization expert. Analyze the input for efficiency, bottlenecks, and optimization opportunities. Provide specific improvements with expected impact.",
+    "ux": "You are a user experience expert. Analyze the input from a UX perspective, focusing on usability, accessibility, and user satisfaction. Provide actionable UX improvements.",
+    "code_review": "You are a senior code reviewer. Analyze the input code for quality, maintainability, best practices, and potential bugs. Provide specific suggestions for improvement.",
+    "architecture": "You are a software architect. Analyze the input from an architectural perspective, focusing on scalability, maintainability, and design patterns. Provide architectural recommendations.",
+    "general": "You are a helpful AI assistant. Analyze the input thoroughly and provide a comprehensive, well-structured response."
+  },
+  
+  "proposer_profiles": [
+    {
+      "name": "security_analyst",
+      "model": "claude-3-opus",
+      "system_prompt": "security",
+      "max_tokens": 500,
+      "temperature": 0.3,
+      "reasoning_effort": "high"
+    },
+    {
+      "name": "performance_engineer",
+      "model": "gpt-4",
+      "system_prompt": "performance",
+      "max_tokens": 400,
+      "temperature": 0.5,
+      "reasoning_effort": "medium"
+    },
+    {
+      "name": "ux_designer",
+      "model": "glm-4.7-flash",
+      "system_prompt": "ux",
+      "max_tokens": 400,
+      "temperature": 0.7,
+      "reasoning_effort": "none"
+    }
+  ],
+  
+  "batch_config": {
+    "max_concurrent": 10,
+    "retry_on_failure": true,
+    "retry_attempts": 2,
+    "retry_delay_ms": 1000
+  }
+}

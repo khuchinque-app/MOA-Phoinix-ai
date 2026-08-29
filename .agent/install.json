@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "agentic_stack_version": "0.19.1",
+  "abs_target": "/home/chinque",
+  "installed_at": "2026-08-29T09:51:35Z",
+  "adapters": {
+    "claude-code": {
+      "installed_at": "2026-08-29T09:51:35Z",
+      "files_written": [
+        "CLAUDE.md",
+        ".claude/settings.json"
+      ],
+      "files_overwritten": [],
+      "files_alerted": [],
+      "file_results": [
+        {
+          "dst": "CLAUDE.md",
+          "result": "written_new"
+        },
+        {
+          "dst": ".claude/settings.json",
+          "result": "written_new"
+        }
+      ],
+      "post_install_results": [],
+      "brain_root_primitive": "$CLAUDE_PROJECT_DIR"
+    }
+  }
+}
