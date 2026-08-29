@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "chrome-mcp": {
+      "command": "node",
+      "args": ["/home/chinque/.nvm/versions/node/v24.19.0/lib/node_modules/mcp-chrome-bridge/dist/mcp/mcp-server-stdio.js"]
+    },
+    "swarm-mcp": {
+      "command": "swarm-mcp",
+      "args": ["--stdio"]
+    },
+    "vision-mcp": {
+      "command": "vision-mcp",
+      "args": ["--stdio"],
+      "env": {
+        "VISION_API_BASE_URL": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "VISION_API_KEY": "",
+        "VISION_MODEL": "qwen3.6-plus"
+      }
+    },
+    "opentabs": {
+      "type": "http",
+      "url": "http://127.0.0.1:9515/mcp"
+    }
+  }
+}
